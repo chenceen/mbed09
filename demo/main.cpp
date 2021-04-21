@@ -50,12 +50,12 @@ void LEDControl (Arguments *in, Reply *out)   {
         RPC::call(buffer, outbuf);
         out->putData(buffer);
         ThisThread::sleep_for(500ms);
-        sprintf(strings, "/myled3/write 1");
+        sprintf(strings, "/myled3/write 0");
         strcpy(buffer, strings);
         RPC::call(buffer, outbuf);
         out->putData(buffer);
         ThisThread::sleep_for(500ms);
-        sprintf(strings, "/myled3/write 0");
+        sprintf(strings, "/myled3/write 1");
         strcpy(buffer, strings);
         RPC::call(buffer, outbuf);
         out->putData(buffer);
