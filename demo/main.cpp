@@ -1,4 +1,4 @@
-  #include "mbed.h"
+#include "mbed.h"
 #include "mbed_rpc.h"
 
 DigitalOut myled2(LED2);
@@ -56,16 +56,9 @@ int main()
 
 void LEDControl (Arguments *in, Reply *out)   
 {
-    bool success = true;
-    char buffer[200], outbuf[256];
-    char strings[20];
     x = in->getArg<double>();
-    if(x==1) sprintf(strings, "LED blinking");
-    else sprintf(strings, "STOP");
-    strcpy(buffer, strings);
-    RPC::call(buffer, outbuf);
-    if (success) out->putData(buffer);
-    else out->putData("Failed to execute LED control.");
+    if(x==1) printf("LED blinking");
+    else printf("STOP");
 
 }
 
